@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+   /* background: linear-gradient(to right, blueviolet , greenyellow); */
+    font-family: roboto;
+    background: url(./img.webp)
+}
+.calculator-grid{
+    margin-top: 2rem;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4,  6rem);
+    grid-template-rows: minmax(7rem, auto) repeat(5,  6rem);
+}
+.output{
+    grid-column: -1/1;
+    background-color: rgba(0, 0, 0, 0.856);
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: .5rem;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.previous-operand{
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.849);
+}
+.current-operand{
+    color: white;
+    font-size: 2.5rem;
+}
+.span-two{
+    grid-column: span 2;
+}
+.calculator-grid > button,.btn {
+    background-color: rgba(255, 255, 255, 0.719);
+    outline: none;
+    border: 1px solid white;
+    font-size: 2rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn :hover,.btn:active,.calculator-grid > button:hover,.calculator-grid > button:active
+ {
+    background-color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.head, .signature{
+    display: flex;
+    justify-content: center;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.712);
+    font-size: 2rem;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.signature{
+    bottom: 0;
+    margin-top: 4rem;
+    font-size: 2rem;
 }
